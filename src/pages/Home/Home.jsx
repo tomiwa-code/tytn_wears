@@ -302,7 +302,7 @@ const Home = () => {
           <motion.h2
             variants={fadeIn("up")}
             custom={0.2}
-            className="text-xl md:text-3xl text-dark-500 text-center font-semibold "
+            className="text-base md:text-3xl text-dark-500 text-center font-semibold "
           >
             Be the
             <span className="text-light-500 px-2 py-1 bg-dark-500 uppercase tracking-wide">
@@ -313,7 +313,7 @@ const Home = () => {
           <motion.p
             variants={fadeIn("down")}
             custom={0.9}
-            className="text-dark-400 text-center text-sm md:text-base"
+            className="text-dark-400 text-center text-xs md:text-base"
           >
             Whenever a new product is in stock
           </motion.p>
@@ -325,10 +325,10 @@ const Home = () => {
         >
           <input
             type="text"
-            className="w-full md:w-[500px] bg-transparent border md:border-2 px-6 placeholder:text-dark-200 py-4 rounded-lg border-dark-200 block focus:outline-none text-sm md:text-base"
+            className="w-[85%] md:w-[500px] bg-transparent border md:border-2 px-6 placeholder:text-dark-200 py-3 md:py-4 rounded-lg border-dark-200 block focus:outline-none text-sm md:text-base"
             placeholder="example@gmail.com"
           />
-          <button className="w-full md:w-[500px] py-4 md:py-5 rounded-lg bg-dark-500 text-light-500 text-lg">
+          <button className="w-[85%] md:w-[500px] py-3 md:py-5 rounded-lg bg-dark-500 text-light-500 text-sm md:text-lg">
             Subscribe
           </button>
         </motion.div>

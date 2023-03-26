@@ -5,7 +5,7 @@ import { fadeIn } from "../variant";
 
 const Footer = () => {
   return (
-    <div className="mt-10 md:mt-24 mx-10 pb-16">
+    <div className="mt-16 md:mt-24 mx-10 pb-16">
       <motion.div
         variants={fadeIn("up")}
         initial="initial"

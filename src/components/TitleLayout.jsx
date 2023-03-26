@@ -7,14 +7,14 @@ const TitleLayout = ({ title, subTitle }) => {
       <motion.h2
         variants={fadeIn("up")}
         custom={0.2}
-        className="font-dancing font-bold text-2xl md:text-3xl text-dark-500 text-center w-full"
+        className="font-dancing font-bold text-lg md:text-3xl text-dark-500 text-center w-full"
       >
         {title}
       </motion.h2>
       <motion.p
         variants={fadeIn("down")}
         custom={0.9}
-        className="text-dark-200 text-center text-sm md:text-base"
+        className="text-dark-200 text-center text-xs md:text-base"
       >
         {subTitle}
       </motion.p>
