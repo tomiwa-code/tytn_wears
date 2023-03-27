@@ -6,7 +6,7 @@ import lady1 from "../../assets/img/lady1.jpg";
 import lady3 from "../../assets/img/lady3.jpg";
 import lady4 from "../../assets/img/lady4.jpg";
 import { motion } from "framer-motion";
-import { fadeIn, hero, SlideIn, staggerParent } from "../../variant";
+import { fadeIn, hero, prods } from "../../variant";
 
 const meetArr = [
   {
@@ -49,13 +49,18 @@ const meetArr = [
 
 const About = () => {
   return (
-    <div>
+    <div className="overflow-hidden pb-10 -mt-20 relative">
       <motion.div
         variants={hero}
         initial="initial"
         animate="animate"
-        className="overflow-hidden min-h-[730px] about-tytn -mt-20 relative before:absolute before:inset-0 before:bg-dark-500 before:bg-opacity-80"
+        className="h-[800px] md:h-[900px] lg:h-[850px] -mt-20 relative"
       >
+        {/* Background img  */}
+        <div className="absolute before:absolute inset-0 before:inset-0 before:bg-dark-500 before:bg-opacity-80 about-tytn"></div>
+        {/* Bottom blur  */}
+        <div className="w-[120%] h-24 bg-light-200 blur-lg absolute -left-10 -bottom-10 "></div>
+        {/* Text  */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <motion.h2
             initial={{
@@ -93,16 +98,15 @@ const About = () => {
             Unleash the power of your style with TYTN
           </motion.p>
         </div>
-        <div className="w-[110%] h-24 bg-light-200 blur-lg absolute -left-10 -bottom-10 hidden md:block"></div>
       </motion.div>
-      <div className="mt-10">
+      <div className="mt-10 md:mt-14 lg:mt-20">
         <motion.h2
           variants={fadeIn("up")}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           custom={0.2}
-          className="text-dark-500 text-center uppercase font-bold text-xl"
+          className="text-dark-500 text-center uppercase font-bold text-base md:text-xl"
         >
           meet the team
         </motion.h2>
@@ -112,25 +116,22 @@ const About = () => {
           custom={0.9}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true }}
-          className="text-center text-dark-200 text-sm"
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center text-dark-200 text-xs md:text-sm"
         >
           Don't forget you're also part of the team
         </motion.p>
-        <motion.div
-          variants={staggerParent}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
-          className="flex flex-wrap items-center gap-x-5 gap-y-10 justify-center mt-10 w-[60%] mx-auto"
-        >
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-10 justify-center mt-10 lg:w-[60%] mx-auto md:px-5 lg:px-0">
           {meetArr.map(({ id, title, name, img }) => (
             <motion.div
-              variants={SlideIn("left")}
-              className="space-y-3"
+              variants={prods}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.3 }}
+              className="space-y-2 md:space-y-3"
               key={id}
             >
-              <div className="w-60 h-72 overflow-hidden">
+              <div className="w-52 h-52 md:w-56 md:h-60 lg:w-60 lg:h-72 overflow-hidden">
                 <img
                   src={img}
                   alt="mike"
@@ -143,20 +144,21 @@ const About = () => {
               </div>
               <div className="flex space-x-5 items-center justify-center">
                 <a href="http://www.twitter.com">
-                  <BsTwitter className="text-dark-200 text-2xl" />
+                  <BsTwitter className="text-dark-200 text-lg md:text-2xl" />
                 </a>
                 <a href="http://www.twitter.com">
-                  <BsInstagram className="text-dark-200 text-2xl" />
+                  <BsInstagram className="text-dark-200 text-lg md:text-2xl" />
                 </a>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
         <motion.p
           variants={fadeIn("up")}
           initial="initial"
           whileInView="animate"
-          className="font-medium text-xl text-dark-500 mt-24 italic text-center"
+          viewport={{ once: true }}
+          className="font-medium text-base md:text-xl text-dark-500 mt-24 italic text-center"
         >
           Thank you for choosing us
         </motion.p>
