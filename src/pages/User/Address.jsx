@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { prods, SlideIn } from "../../variant";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import UserTitleLayout from "../../components/UserTitleLayout";
 
 const Address = () => {
   return (
@@ -10,19 +11,11 @@ const Address = () => {
       whileInView="animate"
       viewport={{ once: true }}
     >
-      <motion.h2
-        variants={prods}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="capitalize text-xl font-semibold"
-      >
-        Address book
-      </motion.h2>
-      <form className="space-y-10 mt-8">
-        <div className="flex gap-x-10">
-          <div className="flex-1 relative">
-            <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+      <UserTitleLayout title={"address book"} />
+      <form className="mt-8 space-y-6 md:space-y-10">
+        <div className="space-y-5 md:space-y-0 md:gap-y-0 md:flex md:gap-x-10">
+          <div className="relative flex-1">
+            <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
               First name
             </p>
             <input
@@ -30,11 +23,11 @@ const Address = () => {
               placeholder="Ayoola"
               name="firstname"
               required
-              className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none"
+              className="w-full px-3 py-3.5 text-sm bg-transparent border border-gray-200 rounded-lg md:px-5 md:py-4 focus:outline-none md:text-base"
             />
           </div>
-          <div className="flex-1 relative">
-            <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+          <div className="relative flex-1">
+            <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
               last name
             </p>
             <input
@@ -42,18 +35,18 @@ const Address = () => {
               placeholder="Ogunbase"
               name="lastname"
               required
-              className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none"
+              className="w-full px-3 py-3.5 md:px-5 text-sm md:text-base md:py-4 bg-transparent border border-gray-200 rounded-lg focus:outline-none"
             />
           </div>
         </div>
-        <div className="flex gap-x-10">
-          <div className="flex-1 flex space-x-6">
+        <div className="space-y-5 md:space-y-0 md:gap-y-0 md:flex md:gap-x-10">
+          <div className="flex items-center flex-1 space-x-3 md:space-x-6">
             <div className="space-y-1">
               <p className="text-dark-200">Prefix</p>
               <p className="text-dark-500">+234</p>
             </div>
             <div className="relative w-full">
-              <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+              <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
                 phone number
               </p>
               <input
@@ -61,17 +54,17 @@ const Address = () => {
                 placeholder="9058419649"
                 name="phone_number"
                 required
-                className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none placeholder:text-dark-200"
+                className="w-full px-3 py-3.5 md:px-5 text-sm md:text-base md:py-4 bg-transparent border border-gray-200 rounded-lg focus:outline-none"
               />
             </div>
           </div>
-          <div className="flex-1 flex space-x-6">
+          <div className="flex flex-1 space-x-3 md:space-x-6">
             <div className="space-y-1">
               <p className="text-dark-200">Prefix</p>
               <p className="text-dark-500">+234</p>
             </div>
             <div className="relative w-full">
-              <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+              <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
                 additional phone number
               </p>
               <input
@@ -79,14 +72,14 @@ const Address = () => {
                 placeholder="9058419649"
                 name="add_phone_number"
                 required
-                className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none placeholder:text-dark-200"
+                className="w-full px-3 py-3.5 md:px-5 text-sm md:text-base md:py-4 bg-transparent border border-gray-200 rounded-lg focus:outline-none"
               />
             </div>
           </div>
         </div>
-        <div className="flex gap-x-10">
-          <div className="flex-1 relative">
-            <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+        <div className="space-y-5 md:space-y-0 md:gap-y-0 md:flex md:gap-x-10">
+          <div className="relative flex-1">
+            <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
               delivery address
             </p>
             <textarea
@@ -96,11 +89,11 @@ const Address = () => {
               cols="30"
               rows="3"
               required
-              className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none placeholder:text-dark-200 resize-none"
+              className="w-full px-3 py-3.5 md:px-5 text-sm md:text-base md:py-4 bg-transparent border border-gray-200 rounded-lg focus:outline-none resize-none"
             />
           </div>
-          <div className="flex-1 relative">
-            <p className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white">
+          <div className="relative flex-1">
+            <p className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white">
               additional information
             </p>
             <textarea
@@ -110,21 +103,21 @@ const Address = () => {
               cols="30"
               rows="3"
               required
-              className="w-full bg-transparent rounded-lg px-5 py-4 border border-gray-200 focus:outline-none placeholder:text-dark-200 resize-none"
+              className="w-full px-3 py-3.5 md:px-5 text-sm md:text-base md:py-4 bg-transparent border border-gray-200 rounded-lg focus:outline-none resize-none"
             />
           </div>
         </div>
-        <div className="flex gap-x-10">
-          <div className="flex-1 relative">
+        <div className="space-y-5 md:space-y-0 md:gap-y-0 md:flex md:gap-x-10">
+          <div className="relative flex-1">
             <label
               htmlFor="regionId"
-              className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white"
+              className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white"
             >
               region
             </label>
             <select
               id="regionId"
-              className="w-full appearance-none rounded-lg px-5 text-dark-500 capitalize py-4 border border-gray-200 focus:outline-none"
+              className="w-full px-3 py-3.5 text-sm md:text-base md:px-5 md:py-4 capitalize border border-gray-200 rounded-lg appearance-none text-dark-500 focus:outline-none"
             >
               <option>Please select</option>
               <option value="abia">abia</option>
@@ -132,18 +125,18 @@ const Address = () => {
               <option value="lagos">lagos</option>
               <option value="ibadan">ibadan</option>
             </select>
-            <MdOutlineKeyboardArrowDown className="absolute top-[50%] -translate-y-[50%] right-5 text-2xl" />
+            <MdOutlineKeyboardArrowDown className="absolute top-[50%] -translate-y-[50%] right-5 text-xl md:text-2xl" />
           </div>
-          <div className="flex-1 relative">
+          <div className="relative flex-1">
             <label
               htmlFor="regionId"
-              className="text-dark-200 text-sm absolute capitalize left-5 -top-[9px] bg-white"
+              className="text-dark-200 text-xs md:text-sm absolute capitalize left-3 md:left-5 -top-[9px] bg-white"
             >
               city
             </label>
             <select
               id="regionId"
-              className="w-full appearance-none rounded-lg px-5 text-dark-500 capitalize py-4 border border-gray-200 focus:outline-none"
+              className="w-full px-3 py-3.5 text-sm md:text-base md:px-5 md:py-4 capitalize border border-gray-200 rounded-lg appearance-none text-dark-500 focus:outline-none"
             >
               <option>Please select</option>
               <option value="abia">abia</option>
@@ -151,11 +144,11 @@ const Address = () => {
               <option value="lagos">lagos</option>
               <option value="ibadan">ibadan</option>
             </select>
-            <MdOutlineKeyboardArrowDown className="absolute top-[50%] -translate-y-[50%] right-5 text-2xl" />
+            <MdOutlineKeyboardArrowDown className="absolute top-[50%] -translate-y-[50%] right-5 text-xl md:text-2xl" />
           </div>
         </div>
-        <div className="w-full flex justify-end">
-          <button className="w-[150px] rounded-lg py-4 bg-dark-600 text-light-500">
+        <div className="flex justify-end w-full">
+          <button className="w-[120px] py-2.5 md:w-[150px] rounded-lg md:py-4 bg-dark-600 text-light-500">
             Save
           </button>
         </div>

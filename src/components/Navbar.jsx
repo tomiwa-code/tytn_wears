@@ -86,14 +86,14 @@ const Navbar = () => {
             <motion.div
               variants={ham("top")}
               animate={openNav ? "animate" : "initial"}
-              className={`w-8 py-[1px] ${
+              className={`w-6 md:w-8 py-[1px] ${
                 location === "about" ? "bg-light-500" : "bg-dark-500"
               } `}
             ></motion.div>
             <motion.div
               variants={ham("bottom")}
               animate={openNav ? "animate" : "initial"}
-              className={`w-8 py-[1px] ${
+              className={`w-6 md:w-8 py-[1px] ${
                 location === "about" ? "bg-light-500" : "bg-dark-500"
               } `}
             ></motion.div>
@@ -127,11 +127,11 @@ const Navbar = () => {
         >
           <div className="flex md:space-x-10 justify-end items-center">
             <GoSearch
-              className="text-2xl  cursor-pointer mr-5 md:mr-0"
+              className="text-lg md:text-2xl  cursor-pointer mr-5 md:mr-0"
               onClick={handleOpenSearch}
             />
             <div className="relative cursor-pointer" onClick={handleOpenCart}>
-              <HiOutlineShoppingBag className="text-2xl" />
+              <HiOutlineShoppingBag className="text-lg md:text-2xl" />
               <span className="bg-dark-500 text-light-500 absolute w-4 h-4 flex items-center justify-center -top-1 -right-1 rounded-full text-xs">
                 2
               </span>

@@ -1,8 +1,9 @@
 import { BsCartCheck, BsHeart } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
 import { TbAddressBook } from "react-icons/tb";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { motion } from "framer-motion";
-import { hero, SlideIn } from "../../variant";
+import { hero, IO, SlideIn } from "../../variant";
 import { useState } from "react";
 import Orders from "./Orders";
 import SavedItems from "./SavedItems";
@@ -11,22 +12,93 @@ import Address from "./Address";
 
 const User = () => {
   const [currentElement, setCurrentElement] = useState("overview");
+  const [openDropDown, setCloseDropDown] = useState(false);
 
   const handleCurrentElement = (prop) => {
-    setCurrentElement((prev) => (prev = prop));
+    setCurrentElement(prop);
   };
+
+  const handleDropDown = () => {
+    setCloseDropDown((prev) => !prev);
+  };
+
+  const dropdownStyle =
+    "capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100";
 
   return (
     <motion.div
       variants={hero}
       initial="initial"
       whileInView="animate"
-      className="px-10 mt-8 overflow-hidden"
+      className="relative px-5 mt-2 overflow-hidden md:px-10 md:mt-8"
     >
-      <div className="flex gap-x-10 h-full min-h-[600px]">
+      <div className="lg:flex lg:gap-x-10 min-h-[600px]">
+        {/* mobile side bar  */}
+        <div className="relative flex mb-5 lg:hidden">
+          <div
+            className="flex items-center px-3 py-3 space-x-3 bg-gray-100 rounded text-dark-500"
+            onClick={handleDropDown}
+          >
+            {currentElement === "overview" ? (
+              <p className="text-sm font-medium capitalize md:text-base">
+                my tytn account
+              </p>
+            ) : (
+              <p className="text-sm font-medium capitalize md:text-base">
+                {currentElement}
+              </p>
+            )}
+            <MdOutlineKeyboardArrowDown className="text-xl" />
+          </div>
+          {/* Dropdown  */}
+          {openDropDown && (
+            <motion.div
+              variants={IO}
+              initial="initial"
+              animate="animate"
+              className="absolute left-0 z-40 py-3 rounded bg-light-500 text-dark-500 shadow-3xl top-14"
+            >
+              <li
+                className="px-10 py-3 font-medium text-center capitalize list-none"
+                onClick={() => {
+                  handleCurrentElement("overview"), handleDropDown();
+                }}
+              >
+                my Tytn account
+              </li>
+              <li
+                className={dropdownStyle}
+                onClick={() => {
+                  handleCurrentElement("orders");
+                  handleDropDown();
+                }}
+              >
+                orders
+              </li>
+              <li
+                className={dropdownStyle}
+                onClick={() => {
+                  handleCurrentElement("saved");
+                  handleDropDown();
+                }}
+              >
+                saved items
+              </li>
+              <li
+                className={dropdownStyle}
+                onClick={() => {
+                  handleCurrentElement("address-book"), handleDropDown();
+                }}
+              >
+                address-book
+              </li>
+            </motion.div>
+          )}
+        </div>
+        {/* web view side bar  */}
         <motion.div
           variants={SlideIn("left")}
-          className="flex-1 bg-white rounded-tl-lg rounded-tr-lg overflow-hidden relative"
+          className="relative flex-1 hidden overflow-hidden bg-white rounded-tl-lg rounded-tr-lg lg:block"
         >
           {/* my TYTN account  */}
           <div
@@ -38,8 +110,8 @@ const User = () => {
             onClick={() => handleCurrentElement("overview")}
           >
             <BiUser className="text-xl" />
-            <p className="font-medium capitalize text-base">
-              my <span className="uppercase tracking-wide">tytn</span> account
+            <p className="text-base font-medium capitalize">
+              my <span className="tracking-wide uppercase">tytn</span> account
             </p>
           </div>
 
@@ -53,7 +125,7 @@ const User = () => {
             onClick={() => handleCurrentElement("orders")}
           >
             <BsCartCheck className="text-xl" />
-            <p className="font-medium capitalize text-base">orders</p>
+            <p className="text-base font-medium capitalize">orders</p>
           </div>
 
           {/* Saved Items  */}
@@ -66,7 +138,7 @@ const User = () => {
             onClick={() => handleCurrentElement("saved")}
           >
             <BsHeart className="text-xl" />
-            <p className="font-medium capitalize text-base">saved items</p>
+            <p className="text-base font-medium capitalize">saved items</p>
           </div>
 
           {/* Address book  */}
@@ -79,17 +151,17 @@ const User = () => {
             onClick={() => handleCurrentElement("address-book")}
           >
             <TbAddressBook className="text-2xl" />
-            <p className="font-medium capitalize text-base">address book</p>
+            <p className="text-base font-medium capitalize">address book</p>
           </div>
 
           {/* Logout  */}
-          <div className="absolute cursor-pointer bottom-0 py-5 text-center uppercase w-full border-t border-gray-200 font-semibold text-dark-500 hover:tracking-wider duration-200">
+          <div className="absolute bottom-0 w-full py-5 font-semibold text-center uppercase duration-200 border-t border-gray-200 cursor-pointer text-dark-500 hover:tracking-wider">
             logout
           </div>
         </motion.div>
         <motion.div
           variants={hero}
-          className="flex-[3] w-full bg-white rounded-lg p-8"
+          className="flex-[3] w-full lg:bg-white rounded-lg lg:p-8"
         >
           {currentElement === "orders" ? (
             <Orders />
@@ -104,6 +176,10 @@ const User = () => {
           )}
         </motion.div>
       </div>
+      {/* Logout  */}
+      <button className="mt-3 lg:hidden px-6 py-2.5 rounded text-center uppercase bg-dark-600 font-semibold text-light-500 duration-200 text-sm">
+        logout
+      </button>
     </motion.div>
   );
 };

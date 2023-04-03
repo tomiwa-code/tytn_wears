@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ListProduct from "../../components/ListProduct";
 import { prods, SlideIn } from "../../variant";
 import { newArrivalArr } from "../Home/data";
+import UserTitleLayout from "../../components/UserTitleLayout";
 
 const SavedItems = () => {
   return (
@@ -11,16 +12,8 @@ const SavedItems = () => {
       whileInView="animate"
       viewport={{ once: true }}
     >
-      <motion.h2
-        variants={prods}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="capitalize text-xl font-semibold"
-      >
-        Saved items
-      </motion.h2>
-      <div className="mt-5 grid grid-cols-3 gap-y-10">
+      <UserTitleLayout title={"saved items"} />
+      <div className="flex flex-wrap items-center mt-5 gap-x-5 gap-y-5 md:gap-y-10">
         {newArrivalArr.map((items) => (
           <ListProduct prodData={items} saved={true} key={items.id} />
         ))}

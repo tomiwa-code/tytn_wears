@@ -16,6 +16,9 @@ const Shop = () => {
     setCloseDropDown((prev) => !prev);
   };
 
+  const dropdownStyle =
+    "capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100";
+
   return (
     <div className="px-5 mt-2 md:px-10 md:mt-5 lg:mt-12">
       <motion.div
@@ -51,18 +54,10 @@ const Shop = () => {
               <li className="capitalize list-none font-medium py-3 px-10 text-center">
                 hoodie
               </li>
-              <li className="capitalize list-none font-medium py-3 px-10 text-center">
-                t-shirt
-              </li>
-              <li className="capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100">
-                sweatshirt
-              </li>
-              <li className="capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100">
-                short
-              </li>
-              <li className="capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100">
-                jogger
-              </li>
+              <li className={dropdownStyle}>t-shirt</li>
+              <li className={dropdownStyle}>sweatshirt</li>
+              <li className={dropdownStyle}>short</li>
+              <li className={dropdownStyle}>jogger</li>
             </motion.div>
           )}
         </div>

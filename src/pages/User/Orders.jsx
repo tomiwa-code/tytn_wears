@@ -5,6 +5,7 @@ import new2 from "../../assets/img/new2.jpg";
 import heroImg2 from "../../assets/img/heroImg2.jpg";
 import short from "../../assets/img/short.jpg";
 import Order from "../../components/Order";
+import UserTitleLayout from "../../components/UserTitleLayout";
 
 const Orders = () => {
   const [openOrder, setOpenOrder] = useState(true);
@@ -57,28 +58,24 @@ const Orders = () => {
       whileInView="animate"
       viewport={{ once: true }}
     >
-      <motion.h2
-        variants={prods}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="capitalize text-xl font-semibold"
-      >
-        orders
-      </motion.h2>
-      <div className="w-full flex items-center border-b border-gray-100 mt-5">
+      <UserTitleLayout title={"orders"} />
+      <div className="flex items-center w-full mt-5 border-b border-gray-100 gap-x-5 md:gap-x-0">
         <button
           className={`${
-            openOrder ? "bg-transparent border-b-2 border-dark-500" : ""
-          } text-center px-6 uppercase py-4`}
+            openOrder
+              ? "bg-transparent border-b md:border-b-2 border-dark-500"
+              : ""
+          } text-center px-1 md:px-6 uppercase py-4 text-xs md:text-base`}
           onClick={() => setOpenOrder((prev) => !prev)}
         >
           open orders ({openOrderArr.length})
         </button>
         <button
           className={`${
-            !openOrder ? "bg-transparent border-b-2 border-dark-500" : ""
-          } text-center px-6 uppercase py-4`}
+            !openOrder
+              ? "bg-transparent border-b md:border-b-2 border-dark-500"
+              : ""
+          } text-center px-1 md:px-6 uppercase py-4 text-xs md:text-base`}
           onClick={() => setOpenOrder((prev) => !prev)}
         >
           close orders ({closeOrderArr.length})
