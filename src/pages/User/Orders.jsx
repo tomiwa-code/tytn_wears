@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { prods, SlideIn } from "../../variant";
+import { SlideIn } from "../../variant";
 import new2 from "../../assets/img/new2.jpg";
 import heroImg2 from "../../assets/img/heroImg2.jpg";
 import short from "../../assets/img/short.jpg";

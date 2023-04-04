@@ -9,12 +9,12 @@ const SearchFaq = () => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="w-[60%] mx-auto flex items-center justify-center relative"
+      className="lg:w-[60%] md:mx-auto flex items-center justify-center relative px-5 md:px-14 lg:px-0"
     >
-      <BsSearch className="text-dark-200 text-xl absolute left-5 top-[50%] -translate-y-[50%]" />
+      <BsSearch className="text-dark-200 text-lg md:text-xl absolute left-8 md:left-20 lg:left-5 top-[50%] -translate-y-[50%]" />
       <input
         type="text"
-        className="w-full py-6 px-14 rounded-lg shadow-xl placeholder:text-dark-200 bg-light-100 focus:outline-none text-dark-500"
+        className="w-full px-10 py-4 text-sm rounded-lg shadow-xl md:py-6 md:text-base md:px-14 placeholder:text-dark-200 bg-light-100 focus:outline-none text-dark-500"
         placeholder="Search for articles"
       />
     </motion.div>

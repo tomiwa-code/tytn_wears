@@ -12,11 +12,13 @@ import Shop from "../pages/Shop/Shop";
 import SoloProduct from "../pages/SoloProduct/SoloProduct";
 import User from "../pages/User/User";
 import Layout from "./Layout";
+import ErrorBoundary from "../pages/Error/ErrorBoundary";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorBoundary />,
     children: [
       {
         path: "/",

@@ -1,9 +1,9 @@
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { BsInstagram, BsPhone, BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import new2 from "../assets/img/new2.jpg";
 import { motion } from "framer-motion";
 import { cart } from "../variant";
+import TalkWithUs from "./TalkWithUs";
 
 const SideSection = () => {
   return (
@@ -12,57 +12,37 @@ const SideSection = () => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="w-[400px]"
+      className="lg:w-[400px]"
     >
-      <div className="w-full bg-light-500 rounded-lg overflow-hidden px-5 py-8">
-        <p className="text-dark-500 font-medium text-xl mb-2 px-3">
+      <div className="w-full overflow-hidden rounded-lg md:py-8 md:px-5 bg-light-500">
+        <p className="mb-5 text-base font-medium md:text-xl md:px-3 text-dark-500">
           Trending products
         </p>
         {[0, 1, 2, 3].map((items) => (
           <Link
             to={"/shop"}
-            className="py-6 hover:bg-light-200 flex items-center space-x-5 bg-light-500 rounded-lg px-3 relative"
+            className="relative flex items-center py-6 space-x-5 rounded-lg md:px-3 hover:bg-light-200 bg-light-500"
             key={items}
           >
-            <div className="w-16 h-16 overflow-hidden rounded-lg">
+            <div className="w-12 h-12 overflow-hidden rounded-lg md:w-16 md:h-16">
               <img
                 src={new2}
                 alt="new2"
-                className="w-full h-full object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
             <div className="space-y-1">
-              <p className="font-semibold capitalize text-dark-500">
+              <p className="text-sm font-semibold capitalize text-dark-500 md:text-base">
                 swift hoodie
               </p>
-              <p className="font-medium capitalize text-dark-500">6000.00</p>
+              <p className="text-sm font-medium capitalize text-dark-500 md:text-base">6000.00</p>
             </div>
-            <MdOutlineKeyboardArrowRight className="text-2xl text-dark-500 absolute top-[50%] -translate-y-[50%] right-3" />
+            <MdOutlineKeyboardArrowRight className="text-lg md:text-2xl text-dark-500 absolute top-[50%] -translate-y-[50%] right-3" />
           </Link>
         ))}
       </div>
-      <div className="mt-8 py-8">
-        <h2 className="text-center italic font-semibold text-xl">
-          Need to talk with us?
-        </h2>
-        <div className="mt-5 flex justify-center space-x-8 items center">
-          <div className="bg-dark-500 text-light-500 hover:bg-light-500 hover:text-dark-500 duration-150 p-3 rounded-full">
-            <a href="www.whatsapp.com">
-              <BsWhatsapp className="text-3xl" />
-            </a>
-          </div>
-          <div className="bg-dark-500 text-light-500 hover:bg-light-500 hover:text-dark-500 duration-150 p-3 rounded-full">
-            <a href="www.instagram.com">
-              <BsInstagram className="text-3xl" />
-            </a>
-          </div>
-          <div className="bg-dark-500 text-light-500 hover:bg-light-500 hover:text-dark-500 duration-150 p-3 rounded-full">
-            <a href="www.instagram.com">
-              <BsPhone className="text-3xl" />
-            </a>
-          </div>
-        </div>
-      </div>
+
+      <TalkWithUs />
     </motion.div>
   );
 };

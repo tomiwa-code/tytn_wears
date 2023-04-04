@@ -9,9 +9,9 @@ import { prods } from "../../variant";
 
 const FaqSolo = () => {
   return (
-    <div className="px-10">
+    <div className="lg:px-10">
       <SearchFaq />
-      <div className="flex mt-10 gap-12 items-start overflow-hidden">
+      <div className="items-start px-5 mt-3 overflow-hidden md:mt-10 md:gap-12 lg:flex md:px-10 lg:px-0">
         <motion.div
           variants={prods}
           initial="initial"
@@ -19,29 +19,35 @@ const FaqSolo = () => {
           viewport={{ once: true }}
           className="flex-[2] bg-light-300 rounded-lg pt-8 overflow-hidden min-h-[700px]"
         >
-          <div className="flex items-center space-x-3 px-8">
-            <Link to={"/"} className="capitalize text-dark-300">
+          <div className="flex items-center space-x-3 md:px-8">
+          <Link
+              to={"/"}
+              className="text-sm capitalize md:font-medium text-dark-200 md:text-base"
+            >
               home /
             </Link>
-            <Link to={"/faqs"} className="capitalize text-dark-300">
+            <Link
+              to={"/faqs"}
+              className="text-sm capitalize md:font-medium text-dark-200 md:text-base"
+            >
               faqs /
             </Link>
             <Link
               to={"/faqs/global"}
-              className="capitalize text-dark-400 flex space-x-2 items-center"
+              className="flex items-center space-x-2 text-sm font-medium capitalize text-dark-400 md:text-base md:font-normal"
             >
-              <BsCart2 className="text-2xl text-dark-200" />
+              <BsCart2 className="text-lg md:text-2xl text-dark-200" />
               <span>shop</span>
             </Link>
           </div>
-          <div className="mt-10 px-8 pb-10">
-            <h2 className="text-dark-500 text-2xl capitalize font-semibold">
+          <div className="mt-5 md:mt-10 md:pb-10 md:px-8">
+            <h2 className="text-base font-semibold capitalize md:text-xl lg:text-2xl text-dark-500">
               shop
             </h2>
-            <p className="capitalize text-sm mt-5 text-dark-200">
+            <p className="mt-3 text-xs capitalize md:text-sm md:mt-5 text-dark-200">
               last updated: 24d
             </p>
-            <div className="mt-6 text-justify">
+            <div className="mt-3 md:mt-6">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel non
               maiores a deleniti omnis, explicabo nisi vitae sed inventore
               tempore quisquam labore aliquid? Quo ab sed perferendis, saepe

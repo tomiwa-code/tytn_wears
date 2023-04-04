@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ListProduct from "../../components/ListProduct";
-import { prods, SlideIn } from "../../variant";
+import { SlideIn } from "../../variant";
 import { newArrivalArr } from "../Home/data";
 import UserTitleLayout from "../../components/UserTitleLayout";
 

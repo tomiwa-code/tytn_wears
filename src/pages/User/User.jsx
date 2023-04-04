@@ -23,7 +23,7 @@ const User = () => {
   };
 
   const dropdownStyle =
-    "capitalize list-none font-medium py-3 px-10 text-center border-t border-gray-100";
+    "capitalize list-none text-sm md:text-base md:font-medium py-3 px-10 text-center border-t border-gray-100";
 
   return (
     <motion.div
@@ -59,7 +59,7 @@ const User = () => {
               className="absolute left-0 z-40 py-3 rounded bg-light-500 text-dark-500 shadow-3xl top-14"
             >
               <li
-                className="px-10 py-3 font-medium text-center capitalize list-none"
+                className="px-10 py-3 text-sm text-center capitalize list-none md:font-medium md:text-base"
                 onClick={() => {
                   handleCurrentElement("overview"), handleDropDown();
                 }}

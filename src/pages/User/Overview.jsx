@@ -1,6 +1,6 @@
 import { GiPencil } from "react-icons/gi";
 import { motion } from "framer-motion";
-import { prods, SlideIn } from "../../variant";
+import { SlideIn } from "../../variant";
 import UserTitleLayout from "../../components/UserTitleLayout";
 
 const Overview = ({ switchToAddress }) => {
