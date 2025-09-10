@@ -67,7 +67,7 @@ const SoloProductDetails = ({ soloProduct }) => {
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="flex-[2] px-10 space-y-3 text-dark-500"
+        className="lg:flex-[2] px-5 md:px-10 space-y-3 text-dark-500"
       >
         <h2 className="capitalize font-bold text-3xl">{title}</h2>
         <div className="flex items-center space-x-6">
@@ -75,8 +75,8 @@ const SoloProductDetails = ({ soloProduct }) => {
             NGN {price.toFixed(2)}
           </p>
         </div>
-        <p className="text-justify w-[500px]">{desc}</p>
-        <div className="flex w-[600px] min-h-[100px] pt-2">
+        <p className="text-justify w-full text-sm md:text-base md:w-[500px]">{desc}</p>
+        <div className="flex w-full flex-col md:flex-row md:w-[600px] min-h-[100px] pt-2">
           <div className="flex-1 flex space-x-5 items-center">
             <p className="font-semibold text-lg text-dark-500">Size:</p>
             <div className="flex space-x-4">
@@ -143,18 +143,18 @@ const SoloProductDetails = ({ soloProduct }) => {
         </div>
         <div className="pt-5 flex items-center space-x-5">
           <button
-            className="w-52 flex items-center justify-center py-4 bg-dark-600 text-light-500 rounded text center space-x-2"
+            className="w-auto px-5 md:px-0 md:w-52 flex items-center justify-center py-4 bg-dark-600 text-light-500 rounded text center space-x-2"
             onClick={handleAddToCart}
           >
-            <BsCart2 className="text-lg" />
-            <p className="text-lg">Add to cart</p>
+            <BsCart2 className="text-base md:text-lg" />
+            <p className="text-base md:text-lg">Add to cart</p>
           </button>
           <button
-            className="w-52 flex items-center justify-center font-medium py-4 border-2 border-dark-600 text-dark-600 rounded text center space-x-2"
+            className="px-5 md:px-0 w-auto md:w-52 flex items-center justify-center font-medium py-4 border-2 border-dark-600 text-dark-600 rounded text center space-x-2"
             onClick={handleAddToCart}
           >
-            <HiOutlineShoppingBag className="text-lg" />
-            <p className="text-lg">Buy Now</p>
+            <HiOutlineShoppingBag className="text-base md:text-lg" />
+            <p className="text-base md:text-lg">Buy Now</p>
           </button>
         </div>
       </motion.div>

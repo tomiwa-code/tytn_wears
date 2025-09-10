@@ -11,13 +11,13 @@ const SoloProduct = () => {
   const [selectedImage, setSelectedImage] = useState("img");
 
   return (
-    <div className="mt-12 px-10">
+    <div className="mt-5 md:mt-12">
       <motion.div
         variants={prods}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
-        className="space-x-3 flex items-center"
+        className="space-x-3 flex items-center text-sm md:text-base px-5 md:px-10"
       >
         <Link
           to={"/"}
@@ -41,15 +41,15 @@ const SoloProduct = () => {
           swift hoodie
         </p>
       </motion.div>
-      <div className="mt-10 flex px-6 gap-x-10 items-center">
+      <div className="mt-6 md:mt-10 flex flex-col lg:flex-row gap-x-10 items-center md:px-10">
         <motion.div
           variants={SlideIn("left")}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="flex-1"
+          className="md:flex-1 w-full md:w-auto"
         >
-          <div className="rounded-xl w-[500px] h-[500px] overflow-hidden">
+          <div className="md:rounded-xl w-full md:w-[600px] lg:w-[500px] h-[400px] md:h-[500px] overflow-hidden mb-5 lg:mb-0">
             <img
               src={getSoloProduct.img}
               alt="solo product"
@@ -61,13 +61,13 @@ const SoloProduct = () => {
       </div>
 
       {/* Releated products  */}
-      <div className="mt-20 space-y-10">
+      <div className="mt-20 space-y-5 md:space-y-8 lg:space-y-10">
         <motion.h2
           variants={prods}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.7 }}
-          className="capitalize font-semibold text-xl text-dark-500 px-[102px]"
+          className="capitalize font-semibold text-xl text-dark-500 text-center lg:px-[102px]"
         >
           related products
         </motion.h2>
@@ -76,7 +76,7 @@ const SoloProduct = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.5 }}
-          className="flex gap-x-5 items-center justify-center"
+          className="flex flex-wrap gap-y-5 gap-x-5 items-center justify-center"
         >
           {trendingShopArr.map((items) => (
             <motion.div variants={prods} key={items.id}>
